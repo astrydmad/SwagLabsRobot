@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230729 16:21:19.351" rpa="false" schemaversion="3">
+<suite id="s1" name="SwagLabsLogin" source="/Users/Mariia_Domnina/Library/CloudStorage/OneDrive-EPAM/Documents/study/SwagLabsRobot/tests/SwagLabsLogin.robot">
+<test id="s1-t1" name="Standard User May Log In" line="11">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230729 16:21:19.553" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230729 16:21:19.553" endtime="20230729 16:21:22.185"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>user-name</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230729 16:21:22.187" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230729 16:21:22.186" endtime="20230729 16:21:22.368"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230729 16:21:22.369" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
+<status status="PASS" starttime="20230729 16:21:22.368" endtime="20230729 16:21:22.438"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230729 16:21:22.438" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" starttime="20230729 16:21:22.438" endtime="20230729 16:21:22.507"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230729 16:21:22.507" endtime="20230729 16:21:22.532"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230729 16:21:24.533" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230729 16:21:22.532" endtime="20230729 16:21:24.533"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230729 16:21:24.533" endtime="20230729 16:21:24.638"/>
+</kw>
+<doc>This test verifies standard user may log in</doc>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20230729 16:21:19.552" endtime="20230729 16:21:24.638"/>
+</test>
+<doc>This suite verifies login feature for different user types</doc>
+<status status="PASS" starttime="20230729 16:21:19.352" endtime="20230729 16:21:24.640"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="SwagLabsLogin">SwagLabsLogin</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230729 16:21:19.551" level="ERROR">Error in file '/Users/Mariia_Domnina/Library/CloudStorage/OneDrive-EPAM/Documents/study/SwagLabsRobot/tests/SwagLabsLogin.robot' on line 4: Resource file '../Resources/PageObjects/Common.robot' does not exist.</msg>
+</errors>
+</robot>
