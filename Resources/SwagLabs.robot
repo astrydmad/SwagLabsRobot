@@ -1,17 +1,19 @@
 *** Settings ***
 Library        SeleniumLibrary
 Resource    ../Resources/Common.robot
+Resource    ../Resources/PageObjects/SignInPage.robot
+Resource    ../Resources/PageObjects/LeftNav.robot
+Resource    ../Resources/PageObjects/MainPage.robot
 
 *** Keywords ***
 Login With Standard User Credentials
-    Input Text  user-name  standard_user
-    Input Text  password    secret_sauce
-    Click Button    login-button
-    Wait Until Page Contains    Products
+    SignInPage.Verify Start Page Loaded
+    SignInPage.Enter Username
+    SignInPage.Enter Password
+    SignInPage.Click Login Button
+    MainPage.Verify Main Page Loaded
     sleep    2s
 
 Log Out
-    Click Button    react-burger-menu-btn
-    sleep    1s
-    Click Element    xpath=//*[@id="logout_sidebar_link"]
-    Wait Until Page Contains Element    login-button
+    LeftNav.Click Log Out
+    SignInPage.Verify Start Page Loaded
