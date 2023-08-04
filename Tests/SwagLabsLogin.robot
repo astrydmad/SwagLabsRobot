@@ -1,7 +1,11 @@
 *** Settings ***
 Documentation   This suite verifies login feature for different user types
-Library        SeleniumLibrary
-Resource    ../Resources/PageObjects/Common.robot
+Resource    ../Resources/SwagLabs.robot
+Resource    ../Resources/Common.robot
+Suite Setup    Begin Web Test
+Suite Teardown    End Web Test
+#Test Setup    Begin Web Test
+#Test Teardown    End Web Test
 
 #run command
 #robot -d results tests/SwagLabsLogin.robot
@@ -11,10 +15,8 @@ Resource    ../Resources/PageObjects/Common.robot
 Standard User Can Log In
     [Documentation]    This test verifies standard user can log in
     [Tags]  Sanity
-    Begin Web Test
-    Login With Standard User Credentials
-    Log Out
-    End Web Test
+    SwagLabs.Login With Standard User Credentials
+    SwagLabs.Log Out
 
 #Locked User Can't Log In
 #    [Documentation]    This test verifies locked out user can't log in
@@ -44,26 +46,3 @@ Standard User Can Log In
 ##    Page Should Contain    Epic sadface: Username is required
 #    sleep    15s
 #    Close Browser
-
-*** Keywords ***
-
-Begin Web Test
-    Open Browser    about:blank    chrome
-    Maximize Browser Window
-    Go To    https://www.saucedemo.com/
-
-Login With Standard User Credentials
-    Input Text  user-name  standard_user
-    Input Text  password    secret_sauce
-    Click Button    login-button
-    Wait Until Page Contains    Products
-    sleep    2s
-
-Log Out
-    Click Button    react-burger-menu-btn
-    sleep    1s
-    Click Element    xpath=//*[@id="logout_sidebar_link"]
-    Wait Until Page Contains Element    login-button
-
-End Web Test
-    Close Browser

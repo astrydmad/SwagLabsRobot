@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230729 19:20:44.165" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230804 16:19:32.658" rpa="false" schemaversion="3">
 <suite id="s1" name="SwagLabsLogin" source="/Users/Mariia_Domnina/Library/CloudStorage/OneDrive-EPAM/Documents/study/SwagLabsRobot/tests/SwagLabsLogin.robot">
-<test id="s1-t1" name="Standard User Can Log In" line="11">
-<kw name="Begin Web Test">
+<kw name="Begin Web Test" library="Common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230729 19:20:44.326" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20230729 19:20:44.325" endtime="20230729 19:20:46.050"/>
+<msg timestamp="20230804 16:19:32.839" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230804 16:19:32.838" endtime="20230804 16:19:34.720"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230729 19:20:46.051" endtime="20230729 19:20:46.515"/>
+<status status="PASS" starttime="20230804 16:19:34.720" endtime="20230804 16:19:34.826"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>https://www.saucedemo.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230729 19:20:46.515" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<status status="PASS" starttime="20230729 19:20:46.515" endtime="20230729 19:20:47.012"/>
+<msg timestamp="20230804 16:19:34.827" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230804 16:19:34.826" endtime="20230804 16:19:36.217"/>
 </kw>
-<status status="PASS" starttime="20230729 19:20:44.325" endtime="20230729 19:20:47.012"/>
+<status status="PASS" starttime="20230804 16:19:32.838" endtime="20230804 16:19:36.217"/>
 </kw>
-<kw name="Login With Standard User Credentials">
+<test id="s1-t1" name="Standard User Can Log In" line="15">
+<kw name="Login With Standard User Credentials" library="SwagLabs">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>user-name</arg>
 <arg>standard_user</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230729 19:20:47.013" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
-<status status="PASS" starttime="20230729 19:20:47.013" endtime="20230729 19:20:47.189"/>
+<msg timestamp="20230804 16:19:36.219" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230804 16:19:36.219" endtime="20230804 16:19:36.401"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>password</arg>
 <arg>secret_sauce</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230729 19:20:47.189" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
-<status status="PASS" starttime="20230729 19:20:47.189" endtime="20230729 19:20:47.258"/>
+<msg timestamp="20230804 16:19:36.402" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
+<status status="PASS" starttime="20230804 16:19:36.401" endtime="20230804 16:19:36.469"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230729 19:20:47.259" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" starttime="20230729 19:20:47.258" endtime="20230729 19:20:47.338"/>
+<msg timestamp="20230804 16:19:36.470" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" starttime="20230804 16:19:36.469" endtime="20230804 16:19:36.542"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Products</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230729 19:20:47.338" endtime="20230729 19:20:47.347"/>
+<status status="PASS" starttime="20230804 16:19:36.542" endtime="20230804 16:19:36.566"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230729 19:20:49.348" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230729 19:20:47.347" endtime="20230729 19:20:49.348"/>
+<msg timestamp="20230804 16:19:38.568" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 16:19:36.566" endtime="20230804 16:19:38.568"/>
 </kw>
-<status status="PASS" starttime="20230729 19:20:47.012" endtime="20230729 19:20:49.348"/>
+<status status="PASS" starttime="20230804 16:19:36.218" endtime="20230804 16:19:38.568"/>
 </kw>
-<kw name="Log Out">
+<kw name="Log Out" library="SwagLabs">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>react-burger-menu-btn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230729 19:20:49.349" level="INFO">Clicking button 'react-burger-menu-btn'.</msg>
-<status status="PASS" starttime="20230729 19:20:49.348" endtime="20230729 19:20:49.392"/>
+<msg timestamp="20230804 16:19:38.569" level="INFO">Clicking button 'react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230804 16:19:38.568" endtime="20230804 16:19:38.611"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230729 19:20:50.394" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230729 19:20:49.392" endtime="20230729 19:20:50.395"/>
+<msg timestamp="20230804 16:19:39.612" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230804 16:19:38.611" endtime="20230804 16:19:39.612"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="logout_sidebar_link"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230729 19:20:50.396" level="INFO">Clicking element 'xpath=//*[@id="logout_sidebar_link"]'.</msg>
-<status status="PASS" starttime="20230729 19:20:50.395" endtime="20230729 19:20:50.431"/>
+<msg timestamp="20230804 16:19:39.613" level="INFO">Clicking element 'xpath=//*[@id="logout_sidebar_link"]'.</msg>
+<status status="PASS" starttime="20230804 16:19:39.613" endtime="20230804 16:19:39.649"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>login-button</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230729 19:20:50.431" endtime="20230729 19:20:50.441"/>
+<status status="PASS" starttime="20230804 16:19:39.649" endtime="20230804 16:19:39.658"/>
 </kw>
-<status status="PASS" starttime="20230729 19:20:49.348" endtime="20230729 19:20:50.441"/>
-</kw>
-<kw name="End Web Test">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230729 19:20:50.441" endtime="20230729 19:20:50.535"/>
-</kw>
-<status status="PASS" starttime="20230729 19:20:50.441" endtime="20230729 19:20:50.535"/>
+<status status="PASS" starttime="20230804 16:19:38.568" endtime="20230804 16:19:39.658"/>
 </kw>
 <doc>This test verifies standard user can log in</doc>
 <tag>Sanity</tag>
-<status status="PASS" starttime="20230729 19:20:44.324" endtime="20230729 19:20:50.535"/>
+<status status="PASS" starttime="20230804 16:19:36.218" endtime="20230804 16:19:39.658"/>
 </test>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230804 16:19:39.659" endtime="20230804 16:19:39.771"/>
+</kw>
+<status status="PASS" starttime="20230804 16:19:39.659" endtime="20230804 16:19:39.772"/>
+</kw>
 <doc>This suite verifies login feature for different user types</doc>
-<status status="PASS" starttime="20230729 19:20:44.167" endtime="20230729 19:20:50.536"/>
+<status status="PASS" starttime="20230804 16:19:32.659" endtime="20230804 16:19:39.772"/>
 </suite>
 <statistics>
 <total>
@@ -108,6 +108,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230729 19:20:44.323" level="ERROR">Error in file '/Users/Mariia_Domnina/Library/CloudStorage/OneDrive-EPAM/Documents/study/SwagLabsRobot/tests/SwagLabsLogin.robot' on line 4: Resource file '../Resources/PageObjects/Common.robot' does not exist.</msg>
 </errors>
 </robot>
