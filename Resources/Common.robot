@@ -1,15 +1,13 @@
 *** Settings ***
 Library        SeleniumLibrary
 
-***Variables ***
-${URL}      https://www.saucedemo.com/
-${BROWSER}      chrome
+*** Variables ***
 
 *** Keywords ***
 Begin Web Test
-    Open Browser    about:blank    ${BROWSER}
+    Open Browser    about:blank     ${BROWSER}
     Maximize Browser Window
-    Go To    ${URL}
+    Go To                           ${URL}
 
 End Web Test
     Close Browser

@@ -1,156 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230804 16:56:17.407" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230809 21:14:56.939" rpa="false" schemaversion="3">
 <suite id="s1" name="SwagLabsLogin" source="/Users/Mariia_Domnina/Library/CloudStorage/OneDrive-EPAM/Documents/study/SwagLabsRobot/tests/SwagLabsLogin.robot">
 <kw name="Begin Web Test" library="Common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
-<arg>chrome</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230804 16:56:17.567" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20230804 16:56:17.566" endtime="20230804 16:56:19.303"/>
+<msg timestamp="20230809 21:14:57.093" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230809 21:14:57.092" endtime="20230809 21:14:58.774"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230804 16:56:19.303" endtime="20230804 16:56:19.764"/>
+<status status="PASS" starttime="20230809 21:14:58.774" endtime="20230809 21:14:59.230"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
+<arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230804 16:56:19.764" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<status status="PASS" starttime="20230804 16:56:19.764" endtime="20230804 16:56:21.574"/>
+<msg timestamp="20230809 21:14:59.231" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230809 21:14:59.230" endtime="20230809 21:14:59.798"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:17.566" endtime="20230804 16:56:21.574"/>
+<status status="PASS" starttime="20230809 21:14:57.092" endtime="20230809 21:14:59.798"/>
 </kw>
-<test id="s1-t1" name="Standard User Can Log In" line="15">
-<kw name="Login With Standard User Credentials" library="SwagLabs">
+<test id="s1-t1" name="Locked User Can't Log In" line="25">
+<kw name="Login With Locked User Credentials" library="SwagLabs">
+<arg>${USERNAME}[0]</arg>
+<arg>${PASSWORD}[0]</arg>
 <kw name="Verify Start Page Loaded" library="SignInPage">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>login-button</arg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:21.576" endtime="20230804 16:56:21.587"/>
+<status status="PASS" starttime="20230809 21:14:59.800" endtime="20230809 21:14:59.812"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>user-name</arg>
+<arg>${USERNAME_FIELD}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:21.587" endtime="20230804 16:56:21.596"/>
+<status status="PASS" starttime="20230809 21:14:59.812" endtime="20230809 21:14:59.821"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>password</arg>
+<arg>${PASSWORD_FIELD}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:21.597" endtime="20230804 16:56:21.605"/>
+<status status="PASS" starttime="20230809 21:14:59.821" endtime="20230809 21:14:59.830"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.576" endtime="20230804 16:56:21.605"/>
+<status status="PASS" starttime="20230809 21:14:59.800" endtime="20230809 21:14:59.830"/>
 </kw>
 <kw name="Enter Username" library="SignInPage">
+<arg>${Username}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>user-name</arg>
-<arg>standard_user</arg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230804 16:56:21.606" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
-<status status="PASS" starttime="20230804 16:56:21.605" endtime="20230804 16:56:21.774"/>
+<msg timestamp="20230809 21:14:59.831" level="INFO">Typing text 's' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230809 21:14:59.830" endtime="20230809 21:14:59.972"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.605" endtime="20230804 16:56:21.775"/>
+<status status="PASS" starttime="20230809 21:14:59.830" endtime="20230809 21:14:59.972"/>
 </kw>
 <kw name="Enter Password" library="SignInPage">
+<arg>${Password}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>secret_sauce</arg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230804 16:56:21.776" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
-<status status="PASS" starttime="20230804 16:56:21.775" endtime="20230804 16:56:21.843"/>
+<msg timestamp="20230809 21:14:59.973" level="INFO">Typing text 's' into text field 'password'.</msg>
+<status status="PASS" starttime="20230809 21:14:59.972" endtime="20230809 21:15:00.031"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.775" endtime="20230804 16:56:21.843"/>
+<status status="PASS" starttime="20230809 21:14:59.972" endtime="20230809 21:15:00.031"/>
 </kw>
 <kw name="Click Login Button" library="SignInPage">
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>login-button</arg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230804 16:56:21.844" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" starttime="20230804 16:56:21.844" endtime="20230804 16:56:21.922"/>
+<msg timestamp="20230809 21:15:00.032" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" starttime="20230809 21:15:00.032" endtime="20230809 21:15:00.084"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.843" endtime="20230804 16:56:21.922"/>
+<status status="PASS" starttime="20230809 21:15:00.032" endtime="20230809 21:15:00.084"/>
 </kw>
-<kw name="Verify Main Page Loaded" library="MainPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Products</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:21.923" endtime="20230804 16:56:21.932"/>
+<kw name="Verify Errored Message For Locked User Is Displayed" library="SignInPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230809 21:15:00.482" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230809 21:15:00.482" level="FAIL">Page should have contained text 'Epic sadface: Sorry, this user has been locked out.' but did not.</msg>
+<status status="FAIL" starttime="20230809 21:15:00.085" endtime="20230809 21:15:00.483"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.922" endtime="20230804 16:56:21.932"/>
+<status status="FAIL" starttime="20230809 21:15:00.084" endtime="20230809 21:15:00.483"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 16:56:23.934" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 16:56:21.933" endtime="20230804 16:56:23.934"/>
+<kw name="Verify Main Page Is Not Opened" library="SignInPage">
+<status status="NOT RUN" starttime="20230809 21:15:00.483" endtime="20230809 21:15:00.483"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:21.576" endtime="20230804 16:56:23.934"/>
+<status status="FAIL" starttime="20230809 21:14:59.800" endtime="20230809 21:15:00.483"/>
 </kw>
-<kw name="Log Out" library="SwagLabs">
-<kw name="Click Log Out" library="LeftNav">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>react-burger-menu-btn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230804 16:56:23.935" level="INFO">Clicking button 'react-burger-menu-btn'.</msg>
-<status status="PASS" starttime="20230804 16:56:23.935" endtime="20230804 16:56:23.977"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 16:56:24.978" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230804 16:56:23.978" endtime="20230804 16:56:24.979"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="logout_sidebar_link"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230804 16:56:24.979" level="INFO">Clicking element 'xpath=//*[@id="logout_sidebar_link"]'.</msg>
-<status status="PASS" starttime="20230804 16:56:24.979" endtime="20230804 16:56:25.015"/>
-</kw>
-<status status="PASS" starttime="20230804 16:56:23.934" endtime="20230804 16:56:25.016"/>
-</kw>
-<kw name="Verify Start Page Loaded" library="SignInPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>login-button</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:25.016" endtime="20230804 16:56:25.022"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>user-name</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:25.022" endtime="20230804 16:56:25.028"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>password</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230804 16:56:25.028" endtime="20230804 16:56:25.033"/>
-</kw>
-<status status="PASS" starttime="20230804 16:56:25.016" endtime="20230804 16:56:25.033"/>
-</kw>
-<status status="PASS" starttime="20230804 16:56:23.934" endtime="20230804 16:56:25.033"/>
-</kw>
-<doc>This test verifies standard user can log in</doc>
+<doc>This test verifies locked out user can't log in</doc>
 <tag>Sanity</tag>
-<status status="PASS" starttime="20230804 16:56:21.575" endtime="20230804 16:56:25.033"/>
+<status status="FAIL" starttime="20230809 21:14:59.799" endtime="20230809 21:15:00.484">Page should have contained text 'Epic sadface: Sorry, this user has been locked out.' but did not.</status>
 </test>
 <kw name="End Web Test" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230804 16:56:25.034" endtime="20230804 16:56:25.143"/>
+<status status="PASS" starttime="20230809 21:15:00.485" endtime="20230809 21:15:00.581"/>
 </kw>
-<status status="PASS" starttime="20230804 16:56:25.034" endtime="20230804 16:56:25.143"/>
+<status status="PASS" starttime="20230809 21:15:00.484" endtime="20230809 21:15:00.581"/>
 </kw>
 <doc>This suite verifies login feature for different user types</doc>
-<status status="PASS" starttime="20230804 16:56:17.408" endtime="20230804 16:56:25.143"/>
+<status status="FAIL" starttime="20230809 21:14:56.940" endtime="20230809 21:15:00.581"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Sanity</stat>
+<stat pass="0" fail="1" skip="0">Sanity</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="SwagLabsLogin">SwagLabsLogin</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="SwagLabsLogin">SwagLabsLogin</stat>
 </suite>
 </statistics>
 <errors>

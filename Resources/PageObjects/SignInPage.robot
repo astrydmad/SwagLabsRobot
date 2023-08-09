@@ -3,20 +3,29 @@ Library        SeleniumLibrary
 
 
 *** Variables ***
-${EMAIL_FIELD}                email
-
+${USERNAME_FIELD}                user-name
+${PASSWORD_FIELD}                password
+${LOGIN_BUTTON}                login-button
 
 *** Keywords ***
 Verify Start Page Loaded
-    Wait Until Page Contains Element    login-button
-    Wait Until Page Contains Element    user-name
-    Wait Until Page Contains Element    password
+    Wait Until Page Contains Element    ${LOGIN_BUTTON}
+    Wait Until Page Contains Element    ${USERNAME_FIELD}
+    Wait Until Page Contains Element    ${PASSWORD_FIELD}
 
 Enter Username
-    Input Text  user-name  standard_user
+    [Arguments]    ${Username}
+    Input Text  ${USERNAME_FIELD}  ${USERNAME}
 
 Enter Password
-    Input Text  password    secret_sauce
+    [Arguments]    ${Password}
+    Input Text  ${PASSWORD_FIELD}    ${PASSWORD}
 
 Click Login Button
-    Click Button    login-button
+    Click Button    ${LOGIN_BUTTON}
+
+Verify Errored Message For Locked User Is Displayed
+    Page Should Contain    Epic sadface: Sorry, this user has been locked out.
+
+Verify Main Page Is Not Opened
+    Page Should Contain     Products

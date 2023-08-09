@@ -17,3 +17,12 @@ Login With Standard User Credentials
 Log Out
     LeftNav.Click Log Out
     SignInPage.Verify Start Page Loaded
+
+Login With Locked User Credentials
+    [Arguments]    ${Username}     ${Password}
+    SignInPage.Verify Start Page Loaded
+    SignInPage.Enter Username   ${Username}
+    SignInPage.Enter Password   ${Password}
+    SignInPage.Click Login Button
+    SignInPage.Verify Errored Message For Locked User Is Displayed
+    SignInPage.Verify Main Page Is Not Opened
