@@ -2,6 +2,7 @@
 Library        SeleniumLibrary
 
 *** Variables ***
+${}
 
 *** Keywords ***
 Verify Main Page Loaded
